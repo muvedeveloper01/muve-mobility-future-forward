@@ -8,7 +8,7 @@ export function HeroSection() {
       {/* Animated Background */}
       <div className="absolute inset-0 bg-hero-pattern" />
       <div className="absolute inset-0 bg-glow-gradient opacity-50" />
-      
+
       {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(20)].map((_, i) => (
@@ -26,12 +26,12 @@ export function HeroSection() {
       </div>
 
       {/* Grid Pattern */}
-      <div 
+      <div
         className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
         style={{
           backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
                            linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
+          backgroundSize: "60px 60px",
         }}
       />
 
@@ -46,26 +46,26 @@ export function HeroSection() {
           </div>
 
           {/* Headline */}
-          <h1 
+          <h1
             className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
             Building the Future with{" "}
-            <span className="gradient-text">Smart Software</span>{" "}
-            Solutions
+            <span className="gradient-text">Smart Software</span> Solutions
           </h1>
 
           {/* Subheadline */}
-          <p 
+          <p
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            We design, build, and scale world-class digital products for businesses worldwide. 
-            From startups to enterprises, we transform ideas into exceptional software.
+            We design, build, and scale world-class digital products for
+            businesses worldwide. From startups to enterprises, we transform
+            ideas into exceptional software.
           </p>
 
           {/* CTA Buttons */}
-          <div 
+          <div
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
@@ -84,7 +84,7 @@ export function HeroSection() {
           </div>
 
           {/* Trust Indicators */}
-          <div 
+          <div
             className="flex flex-wrap items-center justify-center gap-8 text-muted-foreground animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
@@ -105,8 +105,10 @@ export function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
-          <span className="text-xs text-muted-foreground">Scroll to explore</span>
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float z-50">
+          <span className="text-xs text-muted-foreground">
+            Scroll to explore
+          </span>
           <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
             <div className="w-1.5 h-3 rounded-full bg-primary animate-bounce" />
           </div>

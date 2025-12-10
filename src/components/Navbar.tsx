@@ -49,7 +49,7 @@ export function Navbar() {
               <span className="text-primary-foreground font-display font-bold text-xl">M</span>
             </div>
             <span className="font-display font-bold text-xl text-foreground">
-              Muve<span className="text-primary">Mobility</span>
+              MUVÉ <span className="text-primary">Mobility</span>
             </span>
           </Link>
 

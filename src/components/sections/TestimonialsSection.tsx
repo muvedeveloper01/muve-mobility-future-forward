@@ -4,30 +4,25 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    quote: "Muve Mobility transformed our business with their innovative solutions. Their team's expertise and dedication exceeded our expectations.",
-    author: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
+    quote: "Golden Nature Plantation brought premium quality and authentic branding to life through their outstanding website and mobile application. Their digital presence truly reflects their product excellence.",
+    author: "Ms. Renu",
+    role: "General Manager, Golden Nature Plantation",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
   },
   {
-    quote: "The quality of work and attention to detail is outstanding. They delivered our mobile app ahead of schedule with exceptional features.",
-    author: "Michael Chen",
-    role: "Founder, InnovateCo",
+    quote: "Muve Super App has revolutionized the way people access multiple services through a single platform. Their web and mobile applications deliver speed, reliability, and innovation at scale.",
+    author: "Dhanushka Bandara",
+    role: "CEO, Muve Mobility (Muve Super App)",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
   },
   {
-    quote: "Working with Muve Mobility has been a game-changer. Their cloud solutions have significantly improved our operational efficiency.",
-    author: "Emily Rodriguez",
-    role: "CTO, GlobalTech",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-  },
-  {
-    quote: "Professional, responsive, and highly skilled team. They understood our vision and delivered a product that perfectly aligns with our goals.",
-    author: "David Kim",
-    role: "Director, FutureLabs",
+    quote: "The Muve Rider App sets a new standard in ride-hailing technology with seamless performance, real-time tracking, and smooth user experience. It's a powerful platform built for scale.",
+    author: "Dhanushka Bandara",
+    role: "CEO, Muve Mobility (Muve Rider App)",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
   },
 ];
+
 
 export function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);

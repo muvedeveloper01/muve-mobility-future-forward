@@ -8,48 +8,65 @@ const categories = ["All", "Web Apps", "Mobile Apps", "Enterprise", "E-commerce"
 
 const projects = [
   {
-    title: "FinTech Banking Platform",
+    title: "Golden Nature Plantation Website",
     category: "Web Apps",
-    description: "A comprehensive digital banking solution with real-time transactions and analytics.",
-    tech: ["React", "Node.js", "PostgreSQL", "AWS"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    description:
+      "A premium corporate website showcasing Golden Nature Plantation’s tea products, heritage, certifications, and global brand identity.",
+    tech: ["React", "Tailwind CSS", "Node.js", "AWS"],
+    image:
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80",
+  },
+
+  {
+    title: "Golden Nature Plantation Mobile App",
+    category: "Mobile Apps",
+    description:
+      "A full-featured plantation mobile app for product browsing, orders, distributor management, and plantation updates.",
+    tech: ["Flutter", "Firebase", "Stripe", "Google Maps"],
+    image:
+      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=80",
   },
   {
-    title: "Healthcare Management System",
+    title: "Muve Rider App",
+    category: "Mobile Apps",
+    description:
+      "Smart rider application with real-time trip management, earnings tracking, navigation, and performance insights.",
+    tech: ["Flutter", "Firebase", "Google Maps", "REST API"],
+    image:
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80",
+  },
+
+  {
+    title: "Muve Web Platform",
+    category: "Web Apps",
+    description:
+      "Administrative and corporate web platform for managing Muve rides, drivers, restaurants, hotels, and customer operations.",
+    tech: ["React", "Node.js", "PostgreSQL", "Docker"],
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80",
+  },
+
+  {
+    title: "Golden Nature Enterprise System",
     category: "Enterprise",
-    description: "End-to-end healthcare platform for hospital management and patient care.",
-    tech: ["Angular", "Python", "MongoDB", "Azure"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
+    description:
+      "Internal enterprise system for staff management, production tracking, distributor control, and export operations.",
+    tech: ["Angular", "Spring Boot", "MySQL", "Azure"],
+    image:
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80",
   },
+
   {
-    title: "E-Commerce Marketplace",
+    title: "Golden Nature Products E-Commerce",
     category: "E-commerce",
-    description: "Multi-vendor marketplace with advanced search and payment integration.",
-    tech: ["Next.js", "Stripe", "Elasticsearch", "Docker"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Fitness Tracking App",
-    category: "Mobile Apps",
-    description: "Cross-platform fitness app with workout tracking and social features.",
-    tech: ["React Native", "Firebase", "Node.js", "ML Kit"],
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Real Estate Platform",
-    category: "Web Apps",
-    description: "Property listing and management platform with virtual tours.",
-    tech: ["Vue.js", "Django", "PostgreSQL", "Three.js"],
-    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Food Delivery App",
-    category: "Mobile Apps",
-    description: "On-demand food delivery app with real-time tracking.",
-    tech: ["Flutter", "Firebase", "Google Maps", "Stripe"],
-    image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop",
+    description:
+      "Online shopping platform for Golden Nature tea and herbal products with secure payments, order tracking, and international shipping.",
+    tech: ["Next.js", "Stripe", "Elasticsearch", "AWS"],
+    image:
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80",
   },
 ];
+
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");

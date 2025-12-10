@@ -12,15 +12,6 @@ const posts = [
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop",
   },
   {
-    title: "Best Practices for Cloud Architecture",
-    excerpt: "Learn the essential principles for designing scalable and resilient cloud-native applications.",
-    author: "Michael Park",
-    date: "Dec 2, 2024",
-    readTime: "6 min read",
-    category: "Cloud",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
-  },
-  {
     title: "Mobile App Development Trends 2024",
     excerpt: "Stay ahead of the curve with the latest trends shaping mobile app development this year.",
     author: "Emily Rodriguez",
@@ -29,33 +20,7 @@ const posts = [
     category: "Mobile",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
   },
-  {
-    title: "Securing Your Web Applications",
-    excerpt: "Essential security practices every developer should implement to protect web applications.",
-    author: "David Kim",
-    date: "Nov 25, 2024",
-    readTime: "7 min read",
-    category: "Security",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=600&h=400&fit=crop",
-  },
-  {
-    title: "The Rise of Microservices Architecture",
-    excerpt: "Understanding when and how to implement microservices for your next project.",
-    author: "Alex Johnson",
-    date: "Nov 20, 2024",
-    readTime: "10 min read",
-    category: "Architecture",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-  },
-  {
-    title: "UI/UX Design Principles That Convert",
-    excerpt: "Design strategies that improve user experience and drive conversions.",
-    author: "Lisa Wang",
-    date: "Nov 15, 2024",
-    readTime: "6 min read",
-    category: "Design",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-  },
+  
 ];
 
 const Blog = () => {

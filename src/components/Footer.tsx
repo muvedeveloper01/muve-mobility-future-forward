@@ -32,12 +32,33 @@ const services = [
 ];
 
 const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Youtube, href: "#", label: "YouTube" },
+  { 
+    icon: Facebook, 
+    href: "https://www.facebook.com/muve.lk?rdid=1P5XPvSPWiGQI7yB&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1BAZY2H3Vh%2F", 
+    label: "Facebook" 
+  },
+  { 
+    icon: Twitter, 
+    href: "#", 
+    label: "Twitter" 
+  }, // ❌ Twitter link not provided yet
+  { 
+    icon: Linkedin, 
+    href: "https://www.linkedin.com/company/muvelk/", 
+    label: "LinkedIn" 
+  },
+  { 
+    icon: Instagram, 
+    href: "https://www.instagram.com/muve.app/?igsh=MTNzbGk5cDRjcWRmbg%3D%3D", 
+    label: "Instagram" 
+  },
+  { 
+    icon: Youtube, 
+    href: "#", 
+    label: "YouTube" 
+  }, // ❌ YouTube link not provided yet
 ];
+
 
 export function Footer() {
   return (

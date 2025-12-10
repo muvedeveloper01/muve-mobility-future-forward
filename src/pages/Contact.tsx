@@ -2,8 +2,9 @@ import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const contactInfo = [
   {
@@ -24,24 +25,45 @@ const contactInfo = [
   {
     icon: Clock,
     title: "Business Hours",
-    details: "Mon - Fri: 9:00 AM - 6:00 PM",
+    details: "Mon - Fri: 8:30 AM - 5:30 PM",
   },
 ];
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
-    }, 1500);
+
+    emailjs
+      .sendForm(
+        "service_zxrurc8",
+        "template_etyp7yr",
+        formRef.current!,
+        "cyKUV8hn-nunJeR2g"
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent Successfully!",
+            description:
+              "We received your message. Our team will contact you soon.",
+          });
+          formRef.current?.reset();
+          setIsSubmitting(false);
+        },
+        (error) => {
+          setIsSubmitting(false);
+          toast({
+            title: "Failed to send message!",
+            description: "Please try again later.",
+            variant: "destructive",
+          });
+          console.error("Email error:", error);
+        }
+      );
   };
 
   return (
@@ -50,18 +72,17 @@ const Contact = () => {
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-hero-pattern" />
         <div className="absolute inset-0 bg-glow-gradient opacity-30" />
-        
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-primary font-medium text-sm uppercase tracking-wider">
               Contact Us
             </span>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mt-3 mb-6">
-              Let's{" "}
-              <span className="gradient-text">Connect</span>
+              Let's <span className="gradient-text">Connect</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to learn more about our services? 
+              Have a project in mind or want to learn more about our services?
               We'd love to hear from you.
             </p>
           </div>
@@ -78,8 +99,8 @@ const Contact = () => {
                 Get in Touch
               </h2>
               <p className="text-muted-foreground mb-8">
-                Whether you're looking to start a new project, need consultation, 
-                or have any questions, our team is here to help.
+                Whether you're looking to start a new project, need
+                consultation, or have any questions, our team is here to help.
               </p>
 
               <div className="space-y-6 mb-12">
@@ -96,7 +117,7 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Map Placeholder */}
+              {/* Google Map */}
               <div className="glass-card rounded-2xl h-64 overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6037687655547!2d80.63306431477554!3d7.290571894735945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae366266498acd3%3A0x411a3818a1e03c35!2sKatugastota%20Rd%2C%20Kandy!5e0!3m2!1sen!2slk!4v1701234567890!5m2!1sen!2slk"
@@ -105,7 +126,6 @@ const Contact = () => {
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
                   title="Office Location"
                 />
               </div>
@@ -116,47 +136,90 @@ const Contact = () => {
               <h2 className="font-display text-2xl font-bold mb-6">
                 Send Us a Message
               </h2>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                {/* Row 1 */}
                 <div className="grid sm:grid-cols-2 gap-4">
+                  <input
+                    type="hidden"
+                    name="date"
+                    value={new Date().toLocaleDateString()}
+                  />
+                  <input
+                    type="hidden"
+                    name="time"
+                    value={new Date().toLocaleTimeString()}
+                  />
+
                   <div>
-                    <label className="text-sm font-medium mb-2 block">First Name</label>
-                    <Input placeholder="John" required />
+                    <label className="text-sm font-medium mb-2 block">
+                      First Name
+                    </label>
+                    <Input name="first_name" placeholder="John" required />
                   </div>
                   <div>
-                    <label className="text-sm font-medium mb-2 block">Last Name</label>
-                    <Input placeholder="Doe" required />
+                    <label className="text-sm font-medium mb-2 block">
+                      Last Name
+                    </label>
+                    <Input name="last_name" placeholder="Doe" required />
                   </div>
                 </div>
 
+                {/* Email */}
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Email Address</label>
-                  <Input type="email" placeholder="john@example.com" required />
+                  <label className="text-sm font-medium mb-2 block">
+                    Email Address
+                  </label>
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                    required
+                  />
                 </div>
 
+                {/* Phone */}
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Phone Number</label>
-                  <Input type="tel" placeholder="+94 XX XXX XXXX" />
+                  <label className="text-sm font-medium mb-2 block">
+                    Phone Number
+                  </label>
+                  <Input
+                    name="phone"
+                    type="tel"
+                    placeholder="+94 XX XXX XXXX"
+                  />
                 </div>
 
+                {/* Subject */}
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Subject</label>
-                  <Input placeholder="Project Inquiry" required />
+                  <label className="text-sm font-medium mb-2 block">
+                    Subject
+                  </label>
+                  <Input
+                    name="subject"
+                    placeholder="Project Inquiry"
+                    required
+                  />
                 </div>
 
+                {/* Message */}
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Message</label>
-                  <Textarea 
+                  <label className="text-sm font-medium mb-2 block">
+                    Message
+                  </label>
+                  <Textarea
+                    name="message"
                     placeholder="Tell us about your project..."
                     rows={5}
                     required
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  variant="hero" 
-                  size="xl" 
+                {/* Submit Button */}
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="xl"
                   className="w-full"
                   disabled={isSubmitting}
                 >
@@ -184,6 +247,7 @@ const Contact = () => {
           <p className="text-muted-foreground text-lg mb-8 max-w-2xl mx-auto">
             Schedule a free 30-minute consultation with our experts.
           </p>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+94817798555">
               <Button variant="hero" size="xl">
@@ -191,7 +255,12 @@ const Contact = () => {
                 Call Now
               </Button>
             </a>
-            <a href="https://wa.me/94817798555" target="_blank" rel="noopener noreferrer">
+
+            <a
+              href="https://wa.me/94817798555"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="heroOutline" size="xl">
                 WhatsApp Us
               </Button>

@@ -62,10 +62,10 @@ export function AboutSection() {
               <div className="glass-card rounded-3xl p-8 shadow-card">
                 <div className="grid grid-cols-2 gap-6">
                   {[
-                    { value: "200+", label: "Projects" },
-                    { value: "50+", label: "Clients" },
-                    { value: "8+", label: "Years" },
-                    { value: "30+", label: "Team Members" },
+                    { value: "10+", label: "Projects" },
+                    { value: "5+", label: "Clients" },
+                    { value: "2+", label: "Years" },
+                    { value: "15+", label: "Team Members" },
                   ].map((stat) => (
                     <div key={stat.label} className="text-center p-4 rounded-xl bg-secondary/50">
                       <div className="text-3xl sm:text-4xl font-display font-bold gradient-text">

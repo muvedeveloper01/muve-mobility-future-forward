@@ -6,7 +6,7 @@ const openings = [
   {
     title: "Senior React Developer",
     department: "Engineering",
-    location: "Kandy / Remote",
+    location: "Kandy / Onsite",
     type: "Full-time",
   },
   {
@@ -18,13 +18,13 @@ const openings = [
   {
     title: "DevOps Engineer",
     department: "Operations",
-    location: "Remote",
+    location: "Onsite",
     type: "Full-time",
   },
   {
     title: "Mobile Developer (Flutter)",
     department: "Engineering",
-    location: "Kandy / Remote",
+    location: "Kandy / Onsite",
     type: "Full-time",
   },
   {
