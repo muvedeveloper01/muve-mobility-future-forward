@@ -15,7 +15,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone Numbers",
-    details: "+94 81 779 8555 / 7439 18805",
+    details: "+94 81 779 8555 / +94 76 655 0316",
   },
   {
     icon: Mail,
