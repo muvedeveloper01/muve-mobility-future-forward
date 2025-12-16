@@ -112,7 +112,7 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button className="mt-4 w-full">Get Started</Button>
+          <Button className="mt-4 w-full">Get Started!</Button>
         </div>
       </div>
     </header>
